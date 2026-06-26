@@ -29,7 +29,9 @@ const VIEWS = [
 ];
 
 export default function App() {
-  const defaultBase = import.meta.env.VITE_API_BASE ?? "";
+
+  const defaultBase = import.meta.env.VITE_BACKEND_URL ?? "";
+
   const [apiBase, setApiBaseState] = useState(() => load("ledger.base", defaultBase));
   const [token, setTokenState] = useState(() => load("ledger.token", ""));
   const [view, setView] = useState("access");
